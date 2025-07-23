@@ -1,1 +1,21 @@
-<p>note-card works!</p>
+<div class="note-card card text-dark  mb-3" [style.background-color]="!isEditing ? note.color : note.color">
+  <ng-container *ngIf="!isEditing">
+    <h3>{{ note.title }}</h3>
+    <p>{{ note.content }}</p>
+    <button (click)="onEditClicked()">Modifier</button>
+    <button (click)="onDeleteClicked()">Supprimer</button>
+  </ng-container>
+
+  <ng-container *ngIf="isEditing">
+    <input class="form-control mb-2" [(ngModel)]="editNote.title" placeholder="Titre">
+    <textarea class="form-control mb-2" [(ngModel)]="editNote.content" placeholder="Contenu"></textarea>
+    <select class="form-select mb-2" [(ngModel)]="editNote.color">
+      <option value="#fff9c4">Jaune</option>
+      <option value="#ffcdd2">Rose</option>
+      <option value="#c8e6c9">Vert</option>
+      <option value="#bbdefb">Bleu</option>
+    </select>
+    <button class="btn btn-sm btn-success me-2" (click)="onSaveEdit()">Enregistrer</button>
+    <button class="btn btn-sm btn-secondary" (click)="onCancelEdit()">Annuler</button>
+  </ng-container>
+</div>
