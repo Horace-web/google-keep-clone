@@ -35,5 +35,10 @@ export class NoteCard {
     this.isEditing = false;
   }
 
+  @Output() archive = new EventEmitter<number>();
+
+  onArchiveClicked() {
+    this.archive.emit(this.note.id);
+  }
 
 }

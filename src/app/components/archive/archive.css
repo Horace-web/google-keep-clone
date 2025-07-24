@@ -1,0 +1,52 @@
+.archive-container {
+  padding: 20px;
+}
+
+
+
+.note-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.note-card {
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.note-card h3 {
+  font-size: 1.1em;
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.note-card p {
+  flex-grow: 1;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.actions {
+  display: flex;
+  justify-content: end;
+  margin-top: 16px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4em;
+  padding: 4px;
+  transition: transform 0.2s;
+}
+
+.icon-button:hover {
+  transform: scale(1.2);
+}

@@ -11,15 +11,15 @@
   <div class="center">
     <div class="search-container">
       <i class="bi bi-search search-icon"></i>
-      <input type="text" placeholder="Rechercher..." />
+      <input type="search" placeholder="Rechercher..." />
     </div>
   </div>
 
   <div class="right">
     <i class="bi bi-arrow-clockwise icon-button" title="Actualiser"></i>
-    <i 
-      class="icon-button" 
-      [ngClass]="isListMode ? 'bi bi-view-list' : 'bi bi-grid-3x3-gap'" 
+    <i
+      class="icon-button"
+      [ngClass]="isListMode ? 'bi bi-view-list' : 'bi bi-grid-3x3-gap'"
       [title]="isListMode ? 'Mode Liste' : 'Mode Grille'"
       (click)="toggleListMode()"
     ></i>
@@ -42,7 +42,7 @@
 <!-- Sidebar indépendante -->
 <div class="sidebar" [class.open]="sideMenuOpen">
   <ul class="sidebar-menu">
-    <li [class.active]="activeSidebarItem === 'notes'" (click)="setActiveSidebarItem('notes')">
+    <li routerLink="/" routerLinkActive="active" [class.active]="activeSidebarItem === 'notes'" (click)="setActiveSidebarItem('notes')">
       <i class="bi bi-lightbulb"></i>
       <span *ngIf="sideMenuOpen">Notes</span>
     </li>
@@ -50,19 +50,15 @@
       <i class="bi bi-bell"></i>
       <span *ngIf="sideMenuOpen">Rappels</span>
     </li>
-    <li [class.active]="activeSidebarItem === 'bac'" (click)="setActiveSidebarItem('bac')">
-      <i class="bi bi-folder"></i>
-      <span *ngIf="sideMenuOpen">ANNÉE DU BACCALAURÉAT</span>
-    </li>
     <li [class.active]="activeSidebarItem === 'libelles'" (click)="setActiveSidebarItem('libelles')">
       <i class="bi bi-pencil"></i>
       <span *ngIf="sideMenuOpen">Modifier les libellés</span>
     </li>
-    <li [class.active]="activeSidebarItem === 'archive'" (click)="setActiveSidebarItem('archive')">
+    <li routerLink="/archive" routerLinkActive="active" [class.active]="activeSidebarItem === 'archive'" (click)="setActiveSidebarItem('archive')">
       <i class="bi bi-archive"></i>
       <span *ngIf="sideMenuOpen">Archive</span>
     </li>
-    <li [class.active]="activeSidebarItem === 'corbeille'" (click)="setActiveSidebarItem('corbeille')">
+    <li routerLink="/corbeille" routerLinkActive="active" [class.active]="activeSidebarItem === 'corbeille'" (click)="setActiveSidebarItem('corbeille')">
       <i class="bi bi-trash"></i>
       <span *ngIf="sideMenuOpen">Corbeille</span>
     </li>

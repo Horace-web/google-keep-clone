@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="trash-container">
+    <h4 class="mb-5">Les notes placées dans la corbeille sont supprimées à la fin de la session.</h4>
+
+    <div class="note-grid">
+      <div
+        *ngFor="let note of trashNotes"
+        class="note-card"
+        [ngStyle]="{ 'background-color': note.color }"
+      >
+        <h3>{{ note.title }}</h3>
+        <p>{{ note.content }}</p>
+
+        <div class="actions">
+          <button class="btn btn-sm btn-success mb-2" (click)="restoreNote(note.id)">Restaurer</button>
+          <button class="btn btn-sm btn-danger" (click)="deleteForever(note.id)">Supprimer définitivement</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

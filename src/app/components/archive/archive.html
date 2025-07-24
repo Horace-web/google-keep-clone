@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="archive-container">
+
+    <div class="note-grid">
+      <div
+        *ngFor="let note of archivedNotes"
+        class="note-card"
+        [ngStyle]="{ 'background-color': note.color }"
+      >
+        <h3>{{ note.title }}</h3>
+        <p>{{ note.content }}</p>
+
+        <div class="actions">
+          <!-- Icône pour désarchiver -->
+          <button class="icon-button text-success mb-2" (click)="unarchiveNote(note.id)" title="Désarchiver">
+            <i class="bi bi-inbox-fill"></i>
+          </button>
+
+          <!-- Icône pour envoyer à la corbeille -->
+          <button class="icon-button text-danger" (click)="moveToTrash(note.id)" title="Envoyer à la corbeille">
+            <i class="bi bi-trash-fill"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

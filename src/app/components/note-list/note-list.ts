@@ -34,4 +34,8 @@ export class NoteList implements OnInit {
     this.noteService.updateNote(updatedNote);
     this.loadNotes();
   }
+  onNoteArchived(noteId: number) {
+  this.noteService.archiveNote(noteId);
+  }
+
 }

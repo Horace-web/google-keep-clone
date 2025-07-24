@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { Navbar } from './ForAll/components/navbar/navbar';
 import { NoteCard } from './components/note-card/note-card';
 import { NoteForm } from './components/note-form/note-form';
@@ -7,7 +7,7 @@ import { NoteList } from './components/note-list/note-list';
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar,NoteForm,NoteList],
+  imports: [Navbar,RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
