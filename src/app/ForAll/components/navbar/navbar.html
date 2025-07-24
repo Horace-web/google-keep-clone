@@ -16,6 +16,8 @@
   </div>
 
   <div class="right">
+    <i class="bi bi-archive icon-button"></i>
+    <i class="bi bi-trash icon-button"></i>
     <i class="bi bi-gear-fill icon-button" (click)="toggleMenu()"></i>
     <div class="dropdown" [class.open]="menuOpen">
       <ul>
@@ -30,13 +32,25 @@
 <!-- Sidebar indépendante -->
 <div class="sidebar" [class.open]="sideMenuOpen">
   <ul class="sidebar-menu">
-    <li>
-      <i class="bi bi-house-door"></i>
-      <span *ngIf="sideMenuOpen">Accueil</span>
+    <li class="active">
+      <i class="bi bi-lightbulb"></i>
+      <span *ngIf="sideMenuOpen">Notes</span>
     </li>
     <li>
-      <i class="bi bi-tags"></i>
-      <span *ngIf="sideMenuOpen">Libellés</span>
+      <i class="bi bi-bell"></i>
+      <span *ngIf="sideMenuOpen">Rappels</span>
+    </li>
+    <li>
+      <i class="bi bi-folder"></i>
+      <span *ngIf="sideMenuOpen">ANNÉE DU BACCALAURÉAT</span>
+    </li>
+    <li>
+      <i class="bi bi-pencil"></i>
+      <span *ngIf="sideMenuOpen">Modifier les libellés</span>
+    </li>
+    <li>
+      <i class="bi bi-archive"></i>
+      <span *ngIf="sideMenuOpen">Archive</span>
     </li>
     <li>
       <i class="bi bi-trash"></i>
