@@ -16,14 +16,19 @@
   </div>
 
   <div class="right">
-    <i class="bi bi-archive icon-button"></i>
-    <i class="bi bi-trash icon-button"></i>
-    <i class="bi bi-gear-fill icon-button" (click)="toggleMenu()"></i>
+    <i class="bi bi-arrow-clockwise icon-button" title="Actualiser"></i>
+    <i class="bi bi-view-list icon-button" title="Mode Grille"></i>
+    <i class="bi bi-gear-fill icon-button" (click)="toggleMenu()" title="Paramètres"></i>
+    <i class="bi bi-grid-3x3-gap icon-button" title="Applications Google"></i>
+    <i class="bi bi-person-circle icon-button" title="Compte utilisateur"></i>
     <div class="dropdown" [class.open]="menuOpen">
       <ul>
-        <li><i class="bi bi-moon-fill"></i> Thème sombre</li>
-        <li><i class="bi bi-box-arrow-up"></i> Exporter</li>
-        <li><i class="bi bi-question-circle"></i> Aide</li>
+        <li (click)="onSettings()">Paramètres</li>
+        <li (click)="onToggleDarkTheme()">Activer le thème sombre</li>
+        <li (click)="onFeedback()">Votre avis</li>
+        <li (click)="onHelp()">Aide</li>
+        <li (click)="onDownload()">Téléchargements de l'application</li>
+        <li (click)="onShortcuts()">Raccourcis clavier</li>
       </ul>
     </div>
   </div>
