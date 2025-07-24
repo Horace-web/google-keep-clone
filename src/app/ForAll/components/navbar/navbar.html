@@ -17,14 +17,19 @@
 
   <div class="right">
     <i class="bi bi-arrow-clockwise icon-button" title="Actualiser"></i>
-    <i class="bi bi-view-list icon-button" title="Mode Grille"></i>
+    <i 
+      class="icon-button" 
+      [ngClass]="isListMode ? 'bi bi-view-list' : 'bi bi-grid-3x3-gap'" 
+      [title]="isListMode ? 'Mode Liste' : 'Mode Grille'"
+      (click)="toggleListMode()"
+    ></i>
     <i class="bi bi-gear-fill icon-button" (click)="toggleMenu()" title="Paramètres"></i>
     <i class="bi bi-grid-3x3-gap icon-button" title="Applications Google"></i>
     <i class="bi bi-person-circle icon-button" title="Compte utilisateur"></i>
     <div class="dropdown" [class.open]="menuOpen">
       <ul>
         <li (click)="onSettings()">Paramètres</li>
-        <li (click)="onToggleDarkTheme()">Activer le thème sombre</li>
+        <li (click)="onToggleDarkTheme()">{{ isDarkTheme ? 'Désactiver le thème sombre' : 'Activer le thème sombre' }}</li>
         <li (click)="onFeedback()">Votre avis</li>
         <li (click)="onHelp()">Aide</li>
         <li (click)="onDownload()">Téléchargements de l'application</li>
@@ -37,27 +42,27 @@
 <!-- Sidebar indépendante -->
 <div class="sidebar" [class.open]="sideMenuOpen">
   <ul class="sidebar-menu">
-    <li class="active">
+    <li [class.active]="activeSidebarItem === 'notes'" (click)="setActiveSidebarItem('notes')">
       <i class="bi bi-lightbulb"></i>
       <span *ngIf="sideMenuOpen">Notes</span>
     </li>
-    <li>
+    <li [class.active]="activeSidebarItem === 'rappels'" (click)="setActiveSidebarItem('rappels')">
       <i class="bi bi-bell"></i>
       <span *ngIf="sideMenuOpen">Rappels</span>
     </li>
-    <li>
+    <li [class.active]="activeSidebarItem === 'bac'" (click)="setActiveSidebarItem('bac')">
       <i class="bi bi-folder"></i>
       <span *ngIf="sideMenuOpen">ANNÉE DU BACCALAURÉAT</span>
     </li>
-    <li>
+    <li [class.active]="activeSidebarItem === 'libelles'" (click)="setActiveSidebarItem('libelles')">
       <i class="bi bi-pencil"></i>
       <span *ngIf="sideMenuOpen">Modifier les libellés</span>
     </li>
-    <li>
+    <li [class.active]="activeSidebarItem === 'archive'" (click)="setActiveSidebarItem('archive')">
       <i class="bi bi-archive"></i>
       <span *ngIf="sideMenuOpen">Archive</span>
     </li>
-    <li>
+    <li [class.active]="activeSidebarItem === 'corbeille'" (click)="setActiveSidebarItem('corbeille')">
       <i class="bi bi-trash"></i>
       <span *ngIf="sideMenuOpen">Corbeille</span>
     </li>
