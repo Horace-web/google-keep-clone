@@ -1,26 +1,58 @@
 .note-form {
-  background-color: white;
-  padding: 16px;
+  border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
-}
-
-.note-form input,
-.note-form textarea,
-.note-form select {
+  padding: 10px;
   width: 100%;
-  margin-bottom: 10px;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  max-width: 500px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-in-out;
 }
 
-.note-form button {
-  background-color: #fbc02d;
-  color: white;
+.note-form input[type="text"] {
+  width: 100%;
   border: none;
-  padding: 10px 16px;
+  outline: none;
+  font-size: 16px;
+  padding: 8px;
+}
+
+.expandable-fields {
+  margin-top: 10px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.expandable-fields textarea,
+.expandable-fields select,
+.expandable-fields button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+  font-size: 14px;
   border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.expandable-fields button {
+  background-color: #f0c420;
+  color: black;
+  border: none;
   cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.expandable-fields button:hover {
+  background-color: #e6b800;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scaleY(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
 }

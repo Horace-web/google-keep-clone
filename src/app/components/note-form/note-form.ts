@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NoteService } from '../../services/note';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-note-form',
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './note-form.html',
   styleUrl: './note-form.css'
 })
 export class NoteForm {
-  
+  isFocused = false;
+
+
    note = {
     title: '',
     content: '',

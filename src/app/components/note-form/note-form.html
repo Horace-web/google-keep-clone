@@ -1,25 +1,33 @@
-<form (ngSubmit)="onSubmit()" #noteForm="ngForm" class="note-form">
+<form
+  (ngSubmit)="onSubmit()"
+  #noteForm="ngForm"
+  class="note-form mb-3"
+  [class.expanded]="isFocused"
+  (click)="isFocused = true"
+>
   <input
     type="text"
     [(ngModel)]="note.title"
     name="title"
     placeholder="Titre"
     required
-  >
+  />
 
-  <textarea
-    [(ngModel)]="note.content"
-    name="content"
-    placeholder="Créer une note..."
-    required
-  ></textarea>
+  <div class="expandable-fields" *ngIf="isFocused">
+    <textarea
+      [(ngModel)]="note.content"
+      name="content"
+      placeholder="Créer une note..."
+      required
+    ></textarea>
 
-  <select [(ngModel)]="note.color" name="color">
-    <option value="#fff9c4">Jaune</option>
-    <option value="#ffcdd2">Rose</option>
-    <option value="#c8e6c9">Vert</option>
-    <option value="#bbdefb">Bleu</option>
-  </select>
+    <select [(ngModel)]="note.color" name="color">
+      <option value="#fff9c4">Jaune</option>
+      <option value="#ffcdd2">Rose</option>
+      <option value="#c8e6c9">Vert</option>
+      <option value="#bbdefb">Bleu</option>
+    </select>
 
-  <button type="submit">Ajouter</button>
+    <button type="submit">Ajouter</button>
+  </div>
 </form>

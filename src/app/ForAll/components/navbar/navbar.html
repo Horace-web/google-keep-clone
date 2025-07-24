@@ -1,1 +1,46 @@
-<p>navbar works!</p>
+<nav class="navbar">
+  <div class="left">
+    <button class="toggle-btn" (click)="toggleSideMenu()">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <img src="https://static.vecteezy.com/system/resources/previews/027/179/352/original/google-keep-icon-logo-symbol-free-png.png" alt="Keep logo" class="logo" />
+    <span class="app-name">Keep Clone</span>
+  </div>
+
+  <div class="center">
+    <div class="search-container">
+      <i class="bi bi-search search-icon"></i>
+      <input type="text" placeholder="Rechercher..." />
+    </div>
+  </div>
+
+  <div class="right">
+    <i class="bi bi-gear-fill icon-button" (click)="toggleMenu()"></i>
+    <div class="dropdown" [class.open]="menuOpen">
+      <ul>
+        <li><i class="bi bi-moon-fill"></i> Thème sombre</li>
+        <li><i class="bi bi-box-arrow-up"></i> Exporter</li>
+        <li><i class="bi bi-question-circle"></i> Aide</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Sidebar indépendante -->
+<div class="sidebar" [class.open]="sideMenuOpen">
+  <ul class="sidebar-menu">
+    <li>
+      <i class="bi bi-house-door"></i>
+      <span *ngIf="sideMenuOpen">Accueil</span>
+    </li>
+    <li>
+      <i class="bi bi-tags"></i>
+      <span *ngIf="sideMenuOpen">Libellés</span>
+    </li>
+    <li>
+      <i class="bi bi-trash"></i>
+      <span *ngIf="sideMenuOpen">Corbeille</span>
+    </li>
+  </ul>
+</div>
