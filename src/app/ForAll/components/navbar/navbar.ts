@@ -10,6 +10,9 @@ import { Component } from '@angular/core';
 export class Navbar {
   sideMenuOpen: boolean = false;
   menuOpen: boolean = false;
+  isDarkTheme: boolean = false;
+  activeSidebarItem: string = 'notes';
+  isListMode: boolean = true;
 
   toggleSideMenu() {
     this.sideMenuOpen = !this.sideMenuOpen;
@@ -17,5 +20,37 @@ export class Navbar {
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
+  }
+
+  onSettings() {
+    alert('Paramètres cliqué');
+  }
+  onToggleDarkTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
+    if (this.isDarkTheme) {
+      document.body.classList.add('dark-theme');
+    } else {
+      document.body.classList.remove('dark-theme');
+    }
+  }
+  onFeedback() {
+    alert('Votre avis cliqué');
+  }
+  onHelp() {
+    alert('Aide cliqué');
+  }
+  onDownload() {
+    alert("Téléchargements de l'application cliqué");
+  }
+  onShortcuts() {
+    alert('Raccourcis clavier cliqué');
+  }
+
+  toggleListMode() {
+    this.isListMode = !this.isListMode;
+  }
+
+  setActiveSidebarItem(item: string) {
+    this.activeSidebarItem = item;
   }
 }

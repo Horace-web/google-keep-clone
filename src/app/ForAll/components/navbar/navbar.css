@@ -67,6 +67,9 @@
 /* === Section droite === */
 .right {
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 .icon-button {
@@ -110,6 +113,10 @@
   background-color: #f1f3f4;
 }
 
+.right i.icon-button:nth-child(3) {
+  margin-right: 32px;
+}
+
 /* === Sidebar === */
 .sidebar {
   position: fixed;
@@ -151,4 +158,36 @@
 .sidebar-menu i {
   font-size: 1.2rem;
   margin-right: 15px;
+}
+
+body.dark-theme {
+  background-color: #202124;
+  color: #e8eaed;
+}
+
+body.dark-theme .navbar,
+body.dark-theme .sidebar,
+body.dark-theme .dropdown {
+  background-color: #2d2e30;
+  color: #e8eaed;
+  border-color: #444;
+}
+
+body.dark-theme .search-container {
+  background-color: #3c4043;
+}
+
+body.dark-theme .note-card {
+  background-color: #28292b !important;
+  color: #e8eaed;
+}
+
+body.dark-theme .note-form {
+  background-color: #28292b;
+  color: #e8eaed;
+}
+
+body.dark-theme .sidebar-menu li:hover,
+body.dark-theme .dropdown li:hover {
+  background-color: #3c4043;
 }

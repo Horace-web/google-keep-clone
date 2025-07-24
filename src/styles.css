@@ -9,3 +9,54 @@ body {
   margin: auto;
   padding: 20px;
 }
+
+body.dark-theme {
+  background-color: #202124;
+  color: #e8eaed;
+}
+
+body.dark-theme .navbar,
+body.dark-theme .sidebar,
+body.dark-theme .dropdown {
+  background-color: #2d2e30;
+  color: #e8eaed;
+  border-color: #444;
+}
+
+body.dark-theme .search-container {
+  background-color: #3c4043;
+}
+
+body.dark-theme .note-card {
+  background-color: #28292b !important;
+  color: #e8eaed;
+}
+
+body.dark-theme .note-form {
+  background-color: #28292b;
+  color: #e8eaed;
+}
+
+body.dark-theme .sidebar-menu li:hover,
+body.dark-theme .dropdown li:hover {
+  background-color: #3c4043;
+}
+
+body.dark-theme .sidebar-menu li,
+body.dark-theme .sidebar-menu i {
+  color: #fff !important;
+}
+
+body.dark-theme .sidebar-menu li:hover {
+  background-color: #35363a !important;
+  color: #fff !important;
+}
+
+body.dark-theme .sidebar-menu li.active {
+  background-color: #3c2e13 !important;
+  color: #fbbc04 !important;
+}
+
+body.dark-theme .sidebar-menu li.active i {
+  color: #fbbc04 !important;
+}
